@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,153 +7,338 @@
     <meta name="keywords" content="Ashraf Harith, UUM student, resume portfolio, legal internship, administrative skills, education sector, Malaysia student leader">
     <meta name="robots" content="index, follow">
     <title>Ashraf Harith bin Abdul Halim - Resume & Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- AOS CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Vanilla Tilt CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <!-- Heroicons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/heroicons/2.0.13/outline.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); backdrop-filter: blur(5.5px); border: 1px solid rgba(255, 255, 255, 0.18); }
+        .parallax { background-attachment: fixed; background-position: center; background-size: cover; background-image: url('images/hero-bg.jpg'); } /* Add a free bg image to images/ if desired */
+        .typewriter { overflow: hidden; white-space: nowrap; animation: typing 3s steps(40, end); }
+        @keyframes typing { from { width: 0; } to { width: 100%; } }
+        #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f4f4f4; display: flex; align-items: center; justify-content: center; z-index: 999; transition: opacity 0.5s; }
+        .spinner { border: 4px solid rgba(0, 0, 0, 0.1); border-top: 4px solid #007bff; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); align-items: center; justify-content: center; z-index: 1000; }
+        #lightbox img, #lightbox video { max-width: 90%; max-height: 90%; }
+        .carousel { overflow: hidden; position: relative; }
+        .carousel-inner { display: flex; transition: transform 0.5s ease; }
+        .carousel-item { min-width: 100%; }
+    </style>
 </head>
-<body>
-    <button id="dark-mode-toggle">Toggle Dark Mode</button>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home" class="smooth-scroll">Home</a></li>
-                <li><a href="#resume" class="smooth-scroll">Resume</a></li>
-                <li><a href="#portfolio" class="smooth-scroll">Portfolio</a></li>
-                <li><a href="#blog" class="smooth-scroll">Blog</a></li>
-                <li><a href="#contact" class="smooth-scroll">Contact</a></li>
-            </ul>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500 relative">
+    <!-- Loading Animation -->
+    <div id="loader"><div class="spinner"></div></div>
+    <!-- Particles Background -->
+    <div id="particles-js" class="absolute top-0 left-0 w-full h-full z-[-1]"></div>
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-green-600 text-white p-8 text-center shadow-lg sticky top-0 z-50">
+        <h1 class="text-4xl font-bold typewriter" data-aos="fade-down">Ashraf Harith bin Abdul Halim</h1>
+        <p class="mt-2 typewriter" data-aos="fade-up">Motivated UUM Foundation Student with Strong Academic Results and Proven Leadership Experience</p>
+        <nav class="mt-4 space-x-6" data-aos="fade-up">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#resume" class="hover:underline">Resume</a>
+            <a href="#portfolio" class="hover:underline">Portfolio</a>
+            <a href="#blog" class="hover:underline">Blog + Vlog</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+            <button id="darkToggle" class="ml-6 bg-white/20 px-3 py-1 rounded-full hover:bg-white/30">🌙</button>
         </nav>
     </header>
 
-    <section id="home" class="fade-in parallax">
-        <h1>Ashraf Harith bin Abdul Halim</h1>
-        <div class="profile-pics">
-            <img src="images/image1.png" alt="Professional profile picture of Ashraf Harith" class="profile-pic">
-            <img src="images/image2.png" alt="Additional profile picture showcasing leadership" class="profile-pic">
-        </div>
-        <p><strong>Professional Background:</strong> I am a dedicated foundation student at Universiti Utara Malaysia with a strong academic standing and proven leadership experience. My journey has equipped me with skills in research, problem-solving, and effective communication, developed through coursework, school leadership roles, and extracurricular involvement. I have a keen interest in the legal, administrative, and education sectors, and I am committed to applying my knowledge to real-world challenges. Through an internship, I aim to gain practical exposure, contribute meaningfully to organizational goals, and continue developing as a well-rounded professional.</p>
-        <p><strong>Career Objectives:</strong> To secure an internship position in the legal, administrative, or education sector where I can apply my research, problem-solving, and communication skills while gaining practical experience. I aim to contribute positively to the organization’s success, develop my professional capabilities, and build a strong foundation for a future career in law and related fields.</p>
-        <p><strong>Contact Information:</strong><br>
-        No77 Taman Permata, Alor Setar, Kedah, Malaysia<br>
-        +60 12-400 7789<br>
-        harithaashraf8@gmail.com<br>
-        LinkedIn: <a href="https://linkedin.com/in/asha_rith8">linkedin.com/in/asha_rith8</a><br>
-        GitHub/Portfolio: <a href="https://github.com/Ash40869">github.com/Ash40869</a></p>
-        <img src="images/professional-infographic.png" alt="Infographic illustrating career journey and objectives" class="infographic">
-    </section>
-
-    <section id="resume" class="fade-in">
-        <h2>Resume</h2>
-        <h3>Education</h3>
-        <svg class="timeline" width="100%" height="250" viewBox="0 0 800 250">
-            <line x1="100" y1="125" x2="700" y2="125" stroke="#007bff" stroke-width="4"/>
-            <circle cx="100" cy="125" r="12" fill="#007bff"/>
-            <text x="100" y="160" font-size="14">SPM (Feb 2025) - Kolej Sultan Abdul Hamid</text>
-            <circle cx="400" cy="125" r="12" fill="#007bff"/>
-            <text x="400" y="160" font-size="14">UUM Foundation (July 2025 - Present)</text>
-        </svg>
-        <ul>
-            <li>Foundation Studies in Management, Universiti Utara Malaysia (UUM), Sintok, Kedah (July 2025 – Present). Relevant coursework: Introduction to ICT, Principles of Economics, Principles Of Management, Principles of Financial Accounting, English for Foundation Studies.</li>
-            <li>Sijil Pelajaran Malaysia (SPM), Kolej Sultan Abdul Hamid, Alor Setar (Graduated: February 2025). 8As (straight As) in core and elective subjects including Bahasa Melayu (A+), English (A+), Sejarah (A), Mathematics (A), Science (A), Principles of Accounting (A+), Perniagaan (A), Islamic Studies (A). Roles: Prefectorial Board Secretary, Chairman of Kadet Remaja Sekolah, Chairman of Cooperative Club.</li>
-        </ul>
-        <h3>Work Experience</h3>
-        <ul>
-            <li>Part-Time Tutor (Weekends), Pusat Tusyen Inspirasi, Taman Meranti, Alor Setar (February 2025 – June 2025): Planned and delivered engaging lessons for English; prepared worksheets; monitored progress.</li>
-            <li>Part-Time Admin Assistant (Workdays), Ramli, Amrjit & Tan, Persiaran Sultan Abdul Hamid, Alor Setar (March 2025 – June 2025): Managed calls/appointments; handled correspondence; maintained supplies.</li>
-        </ul>
-        <h3>Skills</h3>
-        <div class="skills-grid">
-            <div class="skill"><p>Microsoft Word</p><div class="skill-bar"><div class="fill" style="--width: 90%;"></div></div></div>
-            <div class="skill"><p>Excel</p><div class="skill-bar"><div class="fill" style="--width: 85%;"></div></div></div>
-            <div class="skill"><p>PowerPoint</p><div class="skill-bar"><div class="fill" style="--width: 80%;"></div></div></div>
-            <div class="skill"><p>Canva</p><div class="skill-bar"><div class="fill" style="--width: 75%;"></div></div></div>
-            <div class="skill"><p>Communication</p><div class="skill-bar"><div class="fill" style="--width: 90%;"></div></div></div>
-            <div class="skill"><p>Teamwork</p><div class="skill-bar"><div class="fill" style="--width: 85%;"></div></div></div>
-            <div class="skill"><p>Critical Thinking</p><div class="skill-bar"><div class="fill" style="--width: 80%;"></div></div></div>
-            <div class="skill"><p>Time Management</p><div class="skill-bar"><div class="fill" style="--width: 85%;"></div></div></div>
-        </div>
-        <h3>Certifications and Awards</h3>
-        <ul>
-            <li>Microsoft Office Specialist (MOS) – Word, Excel, PowerPoint, 2022</li>
-            <li>Google Workspace Productivity Tools – Google Docs, Sheets, Slides, 2023</li>
-            <li>First Aid & CPR Certificate – Malaysian Red Crescent, 2023</li>
-            <li>Introduction to Legal Research – Coursera, 2024</li>
-            <li>Effective Communication Skills – LinkedIn Learning, 2024</li>
-            <li>Awards: First Runner-up, Choral Speaking (2023); 2nd Place, Public Speaking (2022); Certificate of Appreciation, Prefectorial Board Secretary (2023); Volunteer Service Award, Malaysian Red Crescent (2023); Outstanding Leadership Award, Prefectorial Board (2023); Top 5 Finalist, National Youth Essay Writing Competition (2022).</li>
-        </ul>
-        <p>Scan QR for this site: <img src="images/qr-code.png" alt="QR code linking to full portfolio website" class="qr-code"></p>
-        <img src="images/resume-infographic.png" alt="Visual timeline infographic of education and experience" class="infographic">
-    </section>
-
-    <section id="portfolio" class="fade-in">
-        <h2>Portfolio</h2>
-        <h3>Projects</h3>
-        <div class="project-cards">
-            <div class="card">
-                <div class="card-front">Group Management Assignment</div>
-                <div class="card-back">Led a 5-member team in creating a simulated company plan covering structure, budgeting, and performance tracking.</div>
+    <!-- Home -->
+    <section id="home" class="parallax py-16 px-6 text-center min-h-screen flex items-center justify-center">
+        <div class="max-w-4xl mx-auto glass p-8 rounded-xl">
+            <div class="profile-pics flex justify-center gap-4" data-aos="zoom-in">
+                <img src="images/image1.png" alt="Profile Picture 1 of Ashraf Harith" class="w-40 h-40 rounded-full shadow-xl tilt" data-tilt loading="lazy">
+                <img src="images/image2.png" alt="Profile Picture 2 of Ashraf Harith" class="w-40 h-40 rounded-full shadow-xl tilt" data-tilt data-aos-delay="200" loading="lazy">
             </div>
-            <div class="card">
-                <div class="card-front">Leadership & Communication Workshop</div>
-                <div class="card-back">Co-organized a workshop to help peers enhance teamwork, leadership, and public speaking skills.</div>
+            <h2 class="text-3xl font-semibold mt-6" data-aos="fade-up">Professional Background</h2>
+            <p class="mt-4" data-aos="fade-up">I am a dedicated foundation student at Universiti Utara Malaysia with a strong academic standing and proven leadership experience. My journey has equipped me with skills in research, problem-solving, and effective communication, developed through coursework, school leadership roles, and extracurricular involvement. I have a keen interest in the legal, administrative, and education sectors, and I am committed to applying my knowledge to real-world challenges. Through an internship, I aim to gain practical exposure, contribute meaningfully to organizational goals, and continue developing as a well-rounded professional.</p>
+            <h2 class="text-3xl font-semibold mt-6" data-aos="fade-up">Career Objectives</h2>
+            <p class="mt-4" data-aos="fade-up">To secure an internship position in the legal, administrative, or education sector where I can apply my research, problem-solving, and communication skills while gaining practical experience. I aim to contribute positively to the organization’s success, develop my professional capabilities, and build a strong foundation for a future career in law and related fields.</p>
+            <p class="mt-4" data-aos="fade-up"><strong>Contact Information:</strong><br>No77 Taman Permata, Alor Setar, Kedah, Malaysia<br>+60 12-400 7789<br>harithaashraf8@gmail.com<br>LinkedIn: linkedin.com/in/asha_rith8<br>GitHub/Portfolio: github.com/Ash40869</p>
+            <img src="images/professional-infographic.png" alt="Infographic illustrating career journey and objectives" class="mt-4 w-full rounded-lg shadow hover:scale-105 transition-transform" data-aos="fade-up" onclick="openLightbox(this.src)" loading="lazy">
+            <!-- Easter Egg -->
+            <p id="easter-egg" class="hidden mt-4 text-green-500">Secret Unlocked: Passionate about innovation and community service!</p>
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="bg-gray-100 dark:bg-gray-800 py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-right">Resume</h2>
+            <h3 class="text-xl font-semibold" data-aos="fade-left">Education</h3>
+            <div class="timeline relative border-l-4 border-blue-600 pl-6 space-y-6" data-aos="fade-left">
+                <div class="relative">
+                    <div class="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full"></div>
+                    <p>Foundation Studies in Management, Universiti Utara Malaysia (UUM), Sintok, Kedah (July 2025 – Present)<br>- Relevant coursework: Introduction to ICT, Principles of Economics, Principles Of Management, Principles of Financial Accounting, English for Foundation Studies</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-3 w-6 h-6 bg-blue-600 rounded-full"></div>
+                    <p>Sijil Pelajaran Malaysia (SPM), Kolej Sultan Abdul Hamid, Alor Setar (Graduated: February 2025)<br>- 8As (straight As) in core and elective subjects including Bahasa Melayu (A+), English (A+), Sejarah (A), Mathematics (A), Science (A), Principles of Accounting (A+), Perniagaan (A), Islamic Studies (A)<br>- Prefectorial Board Secretary, Chairman of Kadet Remaja Sekolah, Chairman of Cooperative Club</p>
+                </div>
+            </div>
+            <h3 class="text-xl font-semibold mt-6" data-aos="fade-left">Work Experience</h3>
+            <ul class="list-disc pl-6 space-y-2" data-aos="fade-left">
+                <li>Part-Time Tutor (Weekends), Pusat Tusyen Inspirasi, Taman Meranti, Alor Setar (February 2025 – June 2025)<br>· Planned and delivered engaging lessons based on syllabus requirements for English subject.<br>· Prepared customised worksheets and practice materials to strengthen students’ understanding.<br>· Monitored and assessed students’ progress, providing constructive feedback to improve performance.</li>
+                <li>Part-Time Admin Assistant (Workdays), Ramli, Amrjit & Tan, Persiaran Sultan Abdul Hamid, Alor Setar (March 2025-June 2025)<br>· Managed incoming calls, scheduled client appointments, and maintained the office calendar<br>· Managed correspondence with clients and external agencies via email and letters<br>· Maintained office supplies and ensured a neat, professional workspace</li>
+            </ul>
+            <h3 class="text-xl font-semibold mt-6" data-aos="fade-left">Skills</h3>
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Microsoft Word</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Excel</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>PowerPoint</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Canva</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Google Workspace</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Time Management</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Critical Thinking</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Communication</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Teamwork</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div data-aos="zoom-in" class="flex items-center">
+                    <svg class="h-6 w-6 mr-2 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                    <p>Languages: Bahasa Melayu (Mother tongue), English (Fluent), Chinese (Basic)</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-3 ml-2">
+                        <div class="bg-green-600 h-3 rounded-full animate-pulse" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-xl font-semibold mt-6" data-aos="fade-left">Certifications</h3>
+            <ul class="list-disc pl-6 space-y-2" data-aos="fade-left">
+                <li>Microsoft Office Specialist (MOS) – Word, Excel, PowerPoint, 2022</li>
+                <li>Google Workspace Productivity Tools – Google Docs, Sheets, Slides, 2023</li>
+                <li>First Aid & CPR Certificate – Malaysian Red Crescent, 2023</li>
+                <li>Introduction to Legal Research – Coursera, 2024</li>
+                <li>Effective Communication Skills – LinkedIn Learning, 2024</li>
+            </ul>
+            <h3 class="text-xl font-semibold mt-6" data-aos="fade-left">Awards & Achievements</h3>
+            <ul class="list-disc pl-6 space-y-2" data-aos="fade-left">
+                <li>First Runner-up, Choral Speaking Competition, District Level – 2023</li>
+                <li>2nd Place, School Public Speaking Competition – 2022</li>
+                <li>Certificate of Appreciation, Prefectorial Board Secretary – 2023</li>
+                <li>Volunteer Service Award, Malaysian Red Crescent – 2023</li>
+                <li>Outstanding Leadership Award, Prefectorial Board – 2023</li>
+                <li>Top 5 Finalist, National Youth Essay Writing Competition – 2022</li>
+            </ul>
+            <a href="assets/resume.pdf" download class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition" data-aos="fade-up">Download Resume (PDF)</a>
+            <p class="mt-4" data-aos="fade-up">Scan QR for this site: <img src="images/qr-code.png" alt="QR Code linking to portfolio website" class="inline w-32" loading="lazy"></p>
+            <img src="images/resume-infographic.png" alt="Visual timeline infographic of education and experience" class="mt-4 w-full rounded-lg shadow hover:scale-105 transition-transform" data-aos="fade-up" onclick="openLightbox(this.src)" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Portfolio</h2>
+            <!-- Filters -->
+            <div class="flex justify-center space-x-4 mb-6" data-aos="fade-up">
+                <button class="filter-btn active bg-blue-600 text-white px-4 py-2 rounded" data-filter="all">All</button>
+                <button class="filter-btn bg-gray-300 text-gray-900 px-4 py-2 rounded dark:bg-gray-700 dark:text-gray-100" data-filter="projects">Projects</button>
+                <button class="filter-btn bg-gray-300 text-gray-900 px-4 py-2 rounded dark:bg-gray-700 dark:text-gray-100" data-filter="case-studies">Case Studies</button>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 gallery">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects" data-aos="flip-left" data-tilt>
+                    <img src="images/project1.jpg" alt="Group Management Assignment project image" class="w-full hover:scale-110 transition-transform" onclick="openLightbox(this.src)" loading="lazy">
+                    <div class="p-4">
+                        <h3 class="font-semibold">Group Management Assignment – Organizational Studies</h3>
+                        <p>Led a 5-member team in creating a simulated company plan covering structure, budgeting, and performance tracking.</p>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects" data-aos="flip-left" data-tilt>
+                    <img src="images/project2.jpg" alt="Leadership & Communication Workshop project image" class="w-full hover:scale-110 transition-transform" onclick="openLightbox(this.src)" loading="lazy">
+                    <div class="p-4">
+                        <h3 class="font-semibold">Leadership & Communication Workshop – Foundation Student Club</h3>
+                        <p>Co-organized a workshop to help peers enhance teamwork, leadership, and public speaking skills.</p>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt case-studies" data-aos="flip-right" data-tilt>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Orientation Week Committee – UUM Foundation Centre</h3>
+                        <p>Coordinated and facilitated activities for over 200 new foundation students, ensuring smooth scheduling and high engagement. Problem: New students often feel overwhelmed; Solution: Structured activities with team-building; Impact: High engagement and positive feedback.</p>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt case-studies" data-aos="flip-right" data-tilt>
+                    <div class="p-4">
+                        <h3 class="font-semibold">Generating Innovations – UUM Foundation Centre</h3>
+                        <p>To inspire students to create practical and original solutions that build creativity, problem-solving skills, and real-world readiness. Problem: Lack of innovation in students; Solution: Workshops and challenges; Impact: Enhanced skills and original projects.</p>
+                    </div>
+                </div>
+            </div>
+            <h3 class="text-xl font-semibold mt-6" data-aos="fade-up">Testimonials</h3>
+            <div class="carousel mt-4" data-aos="fade-up">
+                <div class="carousel-inner flex">
+                    <div class="carousel-item p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg glass">“Ashraf is a dependable and proactive student leader who takes initiative and delivers quality results.” – Lecturer, UUM Foundation Centre</div>
+                    <div class="carousel-item p-4 bg-white dark:bg-gray-800 rounded-lg shadow-lg glass">“His ability to organize events and work with diverse teams makes him a valuable contributor to any project.” – Student Club President</div>
+                </div>
+            </div>
+            <img src="images/portfolio-infographic.png" alt="Infographic showcasing project impacts and case studies" class="mt-4 w-full rounded-lg shadow hover:scale-105 transition-transform" data-aos="fade-up" onclick="openLightbox(this.src)" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Blog + Vlog -->
+    <section id="blog" class="bg-gray-100 dark:bg-gray-800 py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Blog + Vlog</h2>
+            <div class="space-y-10">
+                <article class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md glass tilt" data-aos="zoom-in" data-tilt>
+                    <img src="images/blog1.jpg" alt="About Myself blog featured image" class="w-full rounded-t-lg" loading="lazy">
+                    <h3 class="font-semibold text-xl mt-4">Finding My Way: Through Leadership and Learning</h3>
+                    <p class="mt-2">Hello, my name is Ashraf Harith bin Abdul Halim, and I am a foundation student at Universiti Utara Malaysia (UUM) pursuing Studies in Management. I grew up in Alor Setar, Kedah, and have always been driven by a passion to resolve issues and help others realize their success. My academic journey started with simple As in my SPM at Kolej Sultan Abdul Hamid, where I received A+ marks for subjects like Bahasa Melayu, English, and Principles of Accounting. This provided a basis for communication confidence and analytical capability—skills that I have carried over to university courses like Introduction to ICT and Principles of Management.<br>Apart from studying, leadership has shaped me. Being Prefectorial Board Secretary, Chairman of Kadet Remaja Sekolah, and Chairman of the Cooperative Club, I had the experience of organizing events, motivating people, and handling tasks within deadlines. These were not titular positions but opportunities to grow as an individual. For instance, organizing school activities taught me that empathy in the collaboration with others is important—listening to different suggestions leads to better outcomes.<br>I'm drawn to the law, administration, and education sectors because they present me with avenues to apply research and communication to real problems. Currently, I'm looking for an internship to link theory with practice, facilitating innovative teams as I build my career in areas related to law.<br>Lessons learned: Persistence is everything—managing studies alongside extracurriculas taught me that time management is not so much a skill but an attitude (Covey, 2020). Setbacks, such as a group project glitch, taught resilience: Adapt and learn from failures. Check out my vlog below for a speedy personal intro and why these lessons thrill me for the future!</p>
+                    <video class="mt-4 w-full rounded-lg shadow" controls loading="lazy">
+                        <source src="videos/Vlog1_AboutMyself.mp4" type="video/mp4">
+                    </video>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://twitter.com/intent/tweet?url=https://ashraf-portfolio-black.vercel.app/&text=Check out this blog on my journey!" class="bg-blue-400 px-3 py-1 rounded">Share on X</a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://ashraf-portfolio-black.vercel.app/" class="bg-blue-700 px-3 py-1 rounded">Share on LinkedIn</a>
+                    </div>
+                    <p class="mt-2 text-sm">Posted on August 23, 2025</p>
+                    <p>References<br>Covey, S. R. (2020). <i>The 7 habits of highly effective people</i>. Simon & Schuster.</p>
+                </article>
+                <article class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md glass tilt" data-aos="zoom-in" data-tilt>
+                    <img src="images/blog2.jpg" alt="Expertise and Work Experiences blog featured image" class="w-full rounded-t-lg" loading="lazy">
+                    <h3 class="font-semibold text-xl mt-4">Developing Expertise: Lessons from My Work and Leadership Experience</h3>
+                    <p class="mt-2">Being a determined UUM foundation student, my fields of expertise are problem-solving, organization, and communication—learned from part-time work and leadership positions. As a part-time tutor at Pusat Tusyen Inspirasi (February-June 2025), I planned engaging English lessons, made customized worksheets, and tracked student progress. This experience refined my ability to adapt education to individuals, distilling complex concepts into bite-sized nuggets. Similarly, as a part-time admin assistant with Ramli, Amrjit & Tan (March-June 2025), I answered calls, made bookings, and processed client mail. These tasks promoted my administrative skills, emphasizing precision and professionalism under intense pressure.<br>My school leadership tasks maximized this experience. I was Chairman of Kadet Remaja Sekolah and the Cooperative Club and organized events and teams, creating teamwork and innovativeness. In university projects, e.g., the Group Management Assignment, I was in charge of a 5-member team to simulate a company plan, with budgeting and performance tracking. The Leadership & Communication Workshop that I co-organized helped other students achieve teambuilding and public speaking—mirroring my own growth.<br>These experiences exhibit my technical (e.g., Microsoft Office, Canva) and soft (e.g., critical thinking, teamwork) skills relevant to legal/admin/education sectors. Lessons learned: Open communication bridges gaps—offering helpful feedback in tutoring drastically altered outcomes. In addition, team diversity, as in the Orientation Week Committee for 200+ students, stimulates creativity (Robbins & Judge, 2022).<br>Lessons learned: Flexibility is essential; a difficult admin task instructed me in how to prioritize when under pressure. Always ask for feedback—it's the quickest route to development. Watch my vlog for a more in-depth look at an authentic work story and how these skills equip me for internships!</p>
+                    <video class="mt-4 w-full rounded-lg shadow" controls loading="lazy">
+                        <source src="videos/Vlog2_Expertise.mp4" type="video/mp4">
+                    </video>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://twitter.com/intent/tweet?url=https://ashraf-portfolio-black.vercel.app/&text=Check out this blog on my expertise!" class="bg-blue-400 px-3 py-1 rounded">Share on X</a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://ashraf-portfolio-black.vercel.app/" class="bg-blue-700 px-3 py-1 rounded">Share on LinkedIn</a>
+                    </div>
+                    <p class="mt-2 text-sm">Posted on August 23, 2025</p>
+                    <p>References<br>Robbins, S. P., & Judge, T. A. (2022). <i>Organizational behavior</i>. Pearson.</p>
+                </article>
             </div>
         </div>
-        <h3>Case Studies</h3>
-        <ul>
-            <li>Orientation Week Committee – UUM Foundation Centre: Coordinated activities for over 200 new students, ensuring smooth scheduling and high engagement.</li>
-            <li>Generating Innovations – UUM Foundation Centre: Inspired students to create practical solutions, building creativity and problem-solving.</li>
-        </ul>
-        <h3>Testimonials</h3>
-        <div class="testimonial-cards">
-            <div class="card">
-                <div class="card-front">Lecturer, UUM Foundation Centre</div>
-                <div class="card-back">“Ashraf is a dependable and proactive student leader who takes initiative and delivers quality results.”</div>
-            </div>
-            <div class="card">
-                <div class="card-front">Student Club President</div>
-                <div class="card-back">“His ability to organize events and work with diverse teams makes him a valuable contributor to any project.”</div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 px-6">
+        <div class="max-w-3xl mx-auto glass p-8 rounded-xl">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Contact</h2>
+            <form id="contact-form" class="space-y-4" data-aos="fade-up">
+                <input type="text" id="name" placeholder="Name" required class="w-full p-3 rounded border border-gray-300 dark:border-gray-600 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition" aria-required="true">
+                <input type="email" id="email" placeholder="Email" required class="w-full p-3 rounded border border-gray-300 dark:border-gray-600 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition" aria-required="true">
+                <textarea id="message" rows="5" placeholder="Message" required class="w-full p-3 rounded border border-gray-300 dark:border-gray-600 focus:border-blue-600 focus:ring-2 focus:ring-blue-600 transition" aria-required="true"></textarea>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition">Send</button>
+            </form>
+            <div class="mt-8 rounded-lg shadow-lg overflow-hidden glass" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.289!2d100.358!3d6.125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b14a!2sAlor+Setar%2C+Kedah%2C+Malaysia!5e0!3m2!1sen!2sus!4v169289" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg" title="Map of Alor Setar, Kedah, Malaysia"></iframe>
             </div>
         </div>
-        <img src="images/portfolio-infographic.png" alt="Infographic showcasing project impacts and case studies" class="infographic">
     </section>
 
-    <section id="blog" class="fade-in">
-        <h2>Blog + Vlog</h2>
-        <article>
-            <h3>Discovering My Path: A Journey Through Leadership and Learning</h3>
-            <p>Hello, I'm Ashraf Harith bin Abdul Halim, a foundation student at Universiti Utara Malaysia (UUM) pursuing Studies in Management. Growing up in Alor Setar, Kedah, I've always been driven by a passion for problem-solving and helping others succeed. My academic journey kicked off with straight As in my SPM at Kolej Sultan Abdul Hamid, where I scored A+ in subjects like Bahasa Melayu, English, and Principles of Accounting. This foundation built my confidence in communication and analytical thinking—skills I've carried into university coursework like Introduction to ICT and Principles of Management.</p>
-            <p>Beyond academics, leadership has shaped who I am. As Prefectorial Board Secretary, Chairman of Kadet Remaja Sekolah, and Chairman of the Cooperative Club, I learned to organize events, motivate teams, and handle responsibilities under pressure. These roles weren't just titles; they were opportunities to grow. For instance, coordinating school activities taught me the importance of empathy in teamwork—listening to diverse perspectives leads to better outcomes.</p>
-            <p>I'm passionate about the legal, administrative, and education sectors because they allow me to apply research and communication to real-world challenges. Currently, I'm seeking an internship to bridge theory with practice, contributing to dynamic teams while building my career in law-related fields.</p>
-            <p>Lessons learned: Persistence is key—balancing studies with extracurriculars showed me that time management isn't just a skill; it's a mindset (Covey, 2020). Failures, like a group project hiccup, taught resilience: Adapt and learn from setbacks. Watch my vlog below for a quick personal intro and why these experiences excite me about the future!</p>
-            <video controls src="videos/Vlog1_AboutMyself.mp4" class="vlog" aria-label="Vlog about personal journey and leadership lessons">Your browser does not support the video tag.</video>
-            <p>References<br>Covey, S. R. (2020). <i>The 7 habits of highly effective people</i>. Simon & Schuster.</p>
-        </article>
-        <article>
-            <h3>Building Expertise: Insights from My Work and Leadership Experiences</h3>
-            <p>As a motivated UUM foundation student, my expertise centers on communication, organization, and problem-solving—honed through part-time roles and leadership positions. In my part-time tutor role at Pusat Tusyen Inspirasi (February-June 2025), I planned engaging English lessons, created customized worksheets, and tracked student progress. This experience sharpened my ability to adapt teaching to individual needs, turning complex concepts into digestible insights. Similarly, as a part-time admin assistant at Ramli, Amrjit & Tan (March-June 2025), I managed calls, scheduled appointments, and handled client correspondence. These tasks built my administrative skills, emphasizing precision and professionalism in fast-paced environments.</p>
-            <p>My school leadership roles amplified this expertise. As Chairman of Kadet Remaja Sekolah and the Cooperative Club, I organized events and led teams, fostering collaboration and innovation. In university projects, like the Group Management Assignment, I led a 5-member team to simulate a company plan, covering budgeting and performance tracking. The Leadership & Communication Workshop I co-organized helped peers build teamwork and public speaking—mirroring my own growth.</p>
-            <p>These experiences showcase my technical skills (e.g., Microsoft Office, Canva) and soft skills (e.g., critical thinking, teamwork), relevant to legal/admin/education sectors. Insights gained: Effective communication bridges gaps—providing constructive feedback in tutoring improved outcomes dramatically. Also, embracing diversity in teams, as in the Orientation Week Committee for 200+ students, drives creativity (Robbins & Judge, 2022).</p>
-            <p>Lessons learned: Adaptability is crucial; a challenging admin task taught me to prioritize under pressure. Always seek feedback—it's the fastest path to improvement. Check out my vlog for a deeper dive into a real work story and how these skills prepare me for internships!</p>
-            <video controls src="videos/Vlog2_Expertise.mp4" class="vlog" aria-label="Vlog on work experiences and expertise building">Your browser does not support the video tag.</video>
-            <p>References<br>Robbins, S. P., & Judge, T. A. (2022). <i>Organizational behavior</i>. Pearson.</p>
-        </article>
-    </section>
-
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required aria-required="true">
-            <label for="email">Email:</label>
-            <input type="email" id="email" required aria-required="true">
-            <label for="message">Message:</label>
-            <textarea id="message" required aria-required="true"></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.289!2d100.358!3d6.125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b14a!2sAlor+Setar%2C+Kedah%2C+Malaysia!5e0!3m2!1sen!2sus!4v169289" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" title="Map of Alor Setar, Kedah, Malaysia"></iframe>
-    </section>
-
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-600 to-green-600 text-white text-center p-6">
         <p>&copy; 2025 Ashraf Harith bin Abdul Halim. All rights reserved.</p>
     </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img" src="" alt="Enlarged image or video"></div>
+
+    <!-- Scripts -->
+    <script>
+        AOS.init({ duration: 1200 });
+        particlesJS('particles-js', { particles: { number: { value: 80 }, color: { value: '#007bff' }, shape: { type: 'circle' }, opacity: { value: 0.5 }, size: { value: 3 }, line_linked: { enable: true, distance: 150, color: '#007bff', opacity: 0.4, width: 1 }, move: { enable: true, speed: 6 } }, interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }, retina_detect: true });
+        VanillaTilt.init(document.querySelectorAll(".tilt"), { max: 25, speed: 400 });
+        const toggle = document.getElementById('darkToggle');
+        toggle.addEventListener('click', () => document.documentElement.classList.toggle('dark'));
+        window.addEventListener('load', () => { document.getElementById('loader').style.opacity = 0; setTimeout(() => document.getElementById('loader').style.display = 'none', 500); });
+        function openLightbox(src) { document.getElementById('lightbox').style.display = 'flex'; document.getElementById('lightbox-img').src = src; }
+        function closeLightbox() { document.getElementById('lightbox').style.display = 'none'; }
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery > div');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-blue-600', 'text-white'));
+                btn.classList.add('active', 'bg-blue-600', 'text-white');
+                const filter = btn.dataset.filter;
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.classList.contains(filter)) item.style.display = 'block';
+                    else item.style.display = 'none';
+                });
+            });
+        });
+        const inner = document.querySelector('.carousel-inner');
+        let index = 0;
+        setInterval(() => { index = (index + 1) % inner.children.length; inner.style.transform = `translateX(-${index * 100}%)`; }, 3000);
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (name && email && /\S+@\S+\.\S+/.test(email) && message) {
+                alert('Message Sent!');
+                e.target.reset();
+            } else {
+                alert('Please fill all fields correctly.');
+            }
+        });
+        document.querySelector('.profile-pics img:first-child').addEventListener('click', () => document.getElementById('easter-egg').classList.toggle('hidden'));
+    </script>
 </body>
 </html>
