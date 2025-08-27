@@ -9,6 +9,9 @@
     <title>Ashraf Harith bin Abdul Halim - Resume & Portfolio</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+	<!-- d3js -->
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src="assets/infographics.js"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- AOS CDN -->
@@ -72,7 +75,7 @@
             <h2 class="text-3xl font-semibold mt-6 heading-icon accent-text" data-aos="fade-up"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>Career Objectives</h2>
             <p class="mt-4" data-aos="fade-up">To secure an internship position in the legal, administrative, or education sector where I can apply my research, problem-solving, and communication skills while gaining practical experience. I aim to contribute positively to the organization’s success, develop my professional capabilities, and build a strong foundation for a future career in law and related fields.</p>
             <p class="mt-4" data-aos="fade-up"><strong>Contact Information:</strong><br>No77 Taman Permata, Alor Setar, Kedah, Malaysia<br>+60 12-400 7789<br>harithaashraf8@gmail.com<br>LinkedIn: linkedin.com/in/asha_rith8<br>GitHub/Portfolio: github.com/Ash40869</p>
-            <img src="images/professional-infographic.png" alt="Infographic illustrating career journey and objectives" class="mt-4 w-full rounded-lg shadow hover:scale-105 transition-transform" data-aos="fade-up" onclick="openLightbox(this.src)" loading="lazy">
+            <div id="skills-radar" class="w-full"></div>
             <!-- Easter Egg -->
             <p id="easter-egg" class="hidden mt-4 text-green-500">Secret Unlocked: Passionate about innovation and community service!</p>
         </div>
@@ -190,7 +193,7 @@
             </ul>
             <a href="assets/resume.pdf" download class="mt-4 inline-block bg-blue-600 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-700 transition" data-aos="fade-up">Download Resume (PDF)</a>
             <p class="mt-4" data-aos="fade-up">Scan QR for this site: <img src="images/qr-code.png" alt="QR Code linking to portfolio website" class="inline w-32" loading="lazy"></p>
-            <img src="images/resume-infographic.png" alt="Visual timeline infographic of education and experience" class="mt-4 w-full rounded-lg shadow hover:scale-105 transition-transform" data-aos="fade-up" onclick="openLightbox(this.src)" loading="lazy">
+            <div id="resume-timeline" class="w-full"></div>
         </div>
     </section>
 
@@ -237,7 +240,7 @@
                     <div class="carousel-item p-4 bg-white rounded-lg shadow-lg glass">“His ability to organize events and work with diverse teams makes him a valuable contributor to any project.” – Student Club President</div>
                 </div>
             </div>
-            <img src="images/portfolio-infographic.png" alt="Infographic showcasing project impacts and case studies" class="mt-4 w-full rounded-lg shadow hover:scale-105 transition-transform" data-aos="fade-up" onclick="openLightbox(this.src)" loading="lazy">
+            <div id="portfolio-impact" class="w-full"></div>
         </div>
     </section>
 
