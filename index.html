@@ -74,6 +74,34 @@
         #resume-timeline svg, #skills-radar svg, #portfolio-impact svg {
             display: block; margin: 0 auto; overflow: visible;
         }
+		#skills-radar {
+			margin-top: 2rem; /* Ensure space after Contact Information */
+			position: relative;
+			width: 100%;
+			max-width: 400px; /* Reduce size for better fit */
+			height: 400px;
+			overflow: visible !important;
+		}
+		.timeline {
+			position: relative;
+			border-left: 4px solid #0070F3;
+			padding-left: 2.5rem; /* Increased from pl-8 (32px) to 40px */
+		}
+		.timeline .relative {
+			position: relative;
+		}
+		.timeline .absolute {
+			left: -0.75rem; /* Adjusted from -left-4 (16px) to -12px */
+			width: 0.625rem; /* 10px to match list-disc size */
+			height: 0.625rem; /* 10px */
+			background-color: #0070F3;
+			border-radius: 50%;
+		}
+		.timeline p {
+			margin-left: 1rem; /* Ensure text clears bullets */
+			white-space: normal;
+			word-wrap: break-word;
+		}
     </style>
 </head>
 <body class="text-gray-100 relative" data-theme="dark">
@@ -110,16 +138,16 @@
         <div class="max-w-4xl mx-auto">
             <h2 class="text-3xl font-bold mb-6 heading-icon accent-text" data-aos="fade-right"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>Resume</h2>
             <h3 class="text-xl font-semibold heading-icon accent-text" data-aos="fade-left"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.477 5.273 5.5 9 5.5 12c0 3-4.977 6.727-6.5 5.747m13 0C13.523 18.727 18.5 15 18.5 12c0-3 4.977-6.727 6.5-5.747m-13 0C13.523 5.273 18.5 9 18.5 12c0 3 4.977 6.727 6.5 5.747m-13 0C10.477 18.727 5.5 15 5.5 12c0-3-4.977-6.727-6.5-5.747" /></svg>Education</h3>
-            <div class="timeline relative border-l-4 border-blue-600 pl-8 space-y-6" data-aos="fade-left">
-                <div class="relative">
-                    <div class="absolute -left-4 w-6 h-6 bg-blue-600 rounded-full"></div>
-                    <p>Foundation Studies in Management, <span class="highlight">Universiti Utara Malaysia (UUM)</span>, Sintok, <span class="highlight">Kedah</span> (July 2025 – Present)<br>- Relevant coursework: Introduction to ICT, Principles of Economics, Principles Of Management, Principles of Financial Accounting, English for Foundation Studies</p>
-                </div>
-                <div class="relative">
-                    <div class="absolute -left-4 w-6 h-6 bg-blue-600 rounded-full"></div>
-                    <p>Sijil Pelajaran Malaysia (SPM), <span class="highlight">Kolej Sultan Abdul Hamid</span>, <span class="highlight">Alor Setar</span> (Graduated: February 2025)<br>- <span class="highlight">straight As in my SPM</span> (8As) in core and elective subjects including Bahasa Melayu (A+), English (A+), Sejarah (A), Mathematics (A), Science (A), Principles of Accounting (A+), Perniagaan (A), Islamic Studies (A)<br>- <span class="highlight">Prefectorial Board Secretary</span>, <span class="highlight">Chairman of Kadet Remaja Sekolah (KRS)</span>, <span class="highlight">Chairman of the Cooperative Club</span></p>
-                </div>
-            </div>
+        <div class="timeline relative border-l-4 border-blue-600 pl-10 space-y-6" data-aos="fade-left">
+				<div class="relative">
+		<div class="absolute -left-3 w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
+				<p>Foundation Studies in Management, <span class="highlight">Universiti Utara Malaysia (UUM)</span>, Sintok, <span class="highlight">Kedah</span> (July 2025 – Present)<br>- Relevant coursework: Introduction to ICT, Principles of Economics, Principles Of Management, Principles of Financial Accounting, English for Foundation Studies</p>
+		</div>
+    <div class="relative">
+        <div class="absolute -left-3 w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
+        <p>Sijil Pelajaran Malaysia (SPM), <span class="highlight">Kolej Sultan Abdul Hamid</span>, <span class="highlight">Alor Setar</span> (Graduated: February 2025)<br>- <span class="highlight">straight As in my SPM</span> (8As) in core and elective subjects including Bahasa Melayu (A+), English (A+), Sejarah (A), Mathematics (A), Science (A), Principles of Accounting (A+), Perniagaan (A), Islamic Studies (A)<br>- <span class="highlight">Prefectorial Board Secretary</span>, <span class="highlight">Chairman of Kadet Remaja Sekolah (KRS)</span>, <span class="highlight">Chairman of the Cooperative Club</span></p>
+    </div>
+</div>
             <h3 class="text-xl font-semibold mt-6 heading-icon accent-text" data-aos="fade-left"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6H8m4 6h4" /></svg>Work Experience</h3>
             <ul class="list-disc ml-8 space-y-2" data-aos="fade-left">
                 <li><span class="highlight">Part-Time Tutor</span> (Weekends), Pusat Tusyen Inspirasi, Taman Meranti, <span class="highlight">Alor Setar</span> (February 2025 – June 2025)<br>· Planned and delivered engaging lessons based on syllabus requirements for English subject.<br>· Prepared customised worksheets and practice materials to strengthen students' understanding.<br>· Monitored and assessed students' progress, providing constructive feedback to improve performance.</li>
@@ -162,29 +190,32 @@
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold mb-6 heading-icon accent-text" data-aos="fade-up"><svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2m-6 4h6" /></svg>Portfolio</h2>
             <h3 class="text-xl font-semibold mt-6 heading-icon accent-text" data-aos="fade-up">Projects</h3>
-            <div class="grid md:grid-cols-2 gap-8 gallery">
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects" data-aos="flip-left" data-tilt>
-                    <div class="p-4">
-                        <h4 class="font-semibold">Digital Check-In Link</h4>
-                        <p>Objectives: Promote mental health awareness, provide support, encourage early intervention, foster community.<br>What I Learned: The importance of user-friendly design and testing with real users.<br><a href="https://forms.gle/viHTz1VyxMCvMhBQ6" target="_blank" class="text-blue-400 hover:underline">View Form</a></p>
-                        <img src="images/Portfolio_Picture1.png" alt="Digital Check-In screenshot" class="w-full rounded-lg mt-4" loading="lazy">
-                        <img src="images/Portfolio_Picture2.png" alt="Digital Check-In feature" class="w-full rounded-lg mt-4" loading="lazy">
-                        <img src="images/Portfolio_Picture3.png" alt="Digital Check-In impact" class="w-full rounded-lg mt-4" loading="lazy">
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects" data-aos="flip-left" data-tilt>
-                    <div class="p-4">
-                        <h4 class="font-semibold">Group Management Assignment – Organizational Studies</h4>
-                        <p>Led a 5-member team in creating a simulated company plan covering structure, budgeting, and performance tracking.</p>
-                    </div>
-                </div>
-                <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects" data-aos="flip-left" data-tilt>
-                    <div class="p-4">
-                        <h4 class="font-semibold">Leadership & Communication Workshop – Foundation Student Club</h4>
-                        <p>Co-organized a workshop to help peers enhance teamwork, leadership, and public speaking skills.</p>
-                    </div>
-                </div>
-            </div>
+            <div class="grid md:grid-cols-2 gap-8 space-y-4 gallery">
+				<div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects min-h-[300px] flex flex-col" data-aos="flip-left" data-tilt>
+					<div class="p-4 flex-grow">
+						<h4 class="font-semibold">Digital Check-In Link</h4>
+						<p>Objectives: Promote mental health awareness, provide support, encourage early intervention, foster community.<br>What I Learned: The importance of user-friendly design and testing with real users.<br><a href="https://forms.gle/viHTz1VyxMCvMhBQ6" target="_blank" class="text-blue-400 hover:underline">View Form</a></p>
+						<img src="images/Portfolio_Picture1.png" alt="Digital Check-In screenshot" class="w-full rounded-lg mt-4" loading="lazy">
+						<img src="images/Portfolio_Picture2.png" alt="Digital Check-In feature" class="w-full rounded-lg mt-4" loading="lazy">
+						<img src="images/Portfolio_Picture3.png" alt="Digital Check-In impact" class="w-full rounded-lg mt-4" loading="lazy">
+					</div>
+				</div>
+				<div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects min-h-[300px] flex flex-col" data-aos="flip-left" data-tilt>
+					<div class="p-4 flex-grow">
+						<h4 class="font-semibold">Group Management Assignment – Organizational Studies</h4>
+						<p>Led a 5-member team in creating a simulated company plan covering structure, budgeting, and performance tracking.</p>
+						<div class="flex-grow"></div> <!-- Spacer to balance height -->
+					</div>
+				</div>
+			</div>
+    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden glass tilt projects min-h-[300px] flex flex-col" data-aos="flip-left" data-tilt>
+        <div class="p-4 flex-grow">
+            <h4 class="font-semibold">Leadership & Communication Workshop – Foundation Student Club</h4>
+            <p>Co-organized a workshop to help peers enhance teamwork, leadership, and public speaking skills.</p>
+            <div class="flex-grow"></div> <!-- Spacer to balance height -->
+        </div>
+    </div>
+</div>
             <h3 class="text-xl font-semibold mt-6 heading-icon accent-text" data-aos="fade-up">Case Studies</h3>
             <img src="images/Portfolio_Picture4.png" alt="Case Studies header" class="w-full rounded-lg mt-4" loading="lazy">
             <div class="grid md:grid-cols-2 gap-8 gallery">

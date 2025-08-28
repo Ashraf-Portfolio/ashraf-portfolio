@@ -5,7 +5,7 @@ function drawResumeTimeline() {
         { name: "Part-Time Tutor, Pusat Tusyen Inspirasi", start: "2025-02-01", end: "2025-06-30", details: "Planned lessons, prepared worksheets, monitored progress", type: "work" },
         { name: "Part-Time Admin Assistant, Ramli, Amrjit & Tan", start: "2025-03-01", end: "2025-06-30", details: "Managed calls/appointments, correspondence, office supplies", type: "work" }
     ];
-    const margin = { top: 80, right: 40, bottom: 120, left: 120 };
+    const margin = { top: 80, right: 40, bottom: 120, left: window.innerWidth < 768 ? 140 : 120 }; // Increase left margin on mobile
     const width = 1000 - margin.left - margin.right;
     const height = 500 - margin.top - margin.bottom;
     d3.select("#resume-timeline").html("");
@@ -46,15 +46,16 @@ function drawResumeTimeline() {
         .call(d3.axisBottom(xScale).ticks(d3.timeMonth.every(3)))
         .selectAll("text")
         .style("font-family", "Inter, sans-serif")
-        .style("font-size", "11px")
+        .style("font-size", window.innerWidth < 768 ? "13px" : "11px")
         .attr("dy", "1em");
     svg.append("g")
         .call(d3.axisLeft(yScale))
         .selectAll("text")
         .style("font-family", "Inter, sans-serif")
-        .style("font-size", "12px")
+        .style("font-size", window.innerWidth < 768 ? "14px" : "12px") // Larger on mobile
         .style("font-weight", "500")
-        .style("fill", colors.text);
+        .style("fill", colors.text)
+        .style("text-shadow", document.body.dataset.theme === 'dark' ? "1px 1px 2px rgba(0,0,0,0.5)" : "none");
     const gradient = svg.append("defs")
         .selectAll("linearGradient")
         .data(data)
@@ -194,9 +195,9 @@ function drawSkillsRadar() {
         { skill: "Bahasa/English", value: 95, category: "Languages" },
         { skill: "Chinese", value: 60, category: "Languages" }
     ];
-    const margin = { top: 80, right: 80, bottom: 80, left: 80 };
-    const width = 500 - margin.left - margin.right;
-    const height = 500 - margin.top - margin.bottom;
+    const margin = { top: 60, right: 60, bottom: 60, left: 60 };
+    const width = 400 - margin.left - margin.right; // Reduced from 500
+    const height = 400 - margin.top - margin.bottom;
     d3.select("#skills-radar").html("");
     const svg = d3.select("#skills-radar")
         .append("svg")
